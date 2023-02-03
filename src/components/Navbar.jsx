@@ -1,14 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 const NavbarTitle = styled.div`
-  
-  top: 71px;
+top: 71px;
 left: 178px;
 width: 138px;
 height: 36px;
 /* UI Properties */
 text-align: left;
-font: 20px/36px Rubik;
+font: 36px Rubik;
 letter-spacing: 0px;
 color: #1E1C24;
 opacity: 1;
@@ -17,9 +16,9 @@ const NavBarRight = styled.button`
 background-color: transparent;
 width: 147px;
 height: 50px;
-border: 2px solid #111111;
+border: 2px solid white;
 border-radius: 100px;
-color: black;
+color: white;
 font-family: Poppins;
 text-align: center;
 opacity: 1;

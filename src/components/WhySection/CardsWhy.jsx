@@ -5,37 +5,70 @@ import { motion } from 'framer-motion'
 
 const Container = styled.div`
 overflow: hidden;
-align-items: center;
 position: relative;
-width: 812px;
-height: 888px;
+width: 60rem;
+height: 40rem;
 @media (max-width: 768px) {
   width: 100%;
-  height: 450px;
+
+  height: 30rem;
   top: 1px;
 }
 
 `
 const Image1 = styled(motion.img)`
 position: absolute;
-width: 612px;
-left: 40px;
-top: 100px;
+width: 40rem;
+left: 7rem;
 z-index: 1;
+animation: floating 2s ease-in-out infinite;
+  transform: translateY(0);
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+};
 
 @media (max-width: 768px) {
-  width:90%;
-  top: 10;
-}`
+  width:100%;
+  left: 0;
+}
+`
 
 const Image2 = styled(motion.img)`
 z-index: 2;
-height:612px;
-left:50px;
+height:40rem;
+left: 9rem;
 width: 100%;
-top: 270px;
+top: 12rem;
+animation: floating 2s ease-in-out infinite;
+  transform: translateY(0);
 
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(7px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 position: absolute;
+@media (max-width: 768px) {
+  width:20rem;
+  top: 0;
+  left:4rem;
+}
 `
 const variants = {
   hidden: { opacity: 0 },
@@ -59,10 +92,10 @@ const item = {
     }
   }
 }
-function Illustrations() {
+function CardsWhy() {
 
   return (<Container>
-    <motion.div  variants={variants} initial="hidden" animate="show">
+    <motion.div variants={variants} initial="hidden" animate="show">
       <Image2 variants={item} src={Why2} />
       <Image1 variants={item} src={Why1} />
     </motion.div>
@@ -70,4 +103,4 @@ function Illustrations() {
   )
 }
 
-export default Illustrations
+export default CardsWhy

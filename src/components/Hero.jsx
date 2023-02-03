@@ -1,8 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import CircleSVG from './CircleSVG';
-import HeroIll from '../assets/Hero/Hero_Illustration.svg'
-import HeroIll2 from '../assets/Hero/Hero_Illustration_Card-4.svg'
 import CN from '../assets/Logos/Cartoon_Network_logo.svg'
 import Booking from '../assets/Logos/Booking.com_logo.svg'
 import CocaCola from '../assets/Logos/CocaCola_logo.svg'
@@ -12,20 +9,29 @@ import Slack from '../assets/Logos/Slack_logo.svg'
 import Spotify from '../assets/Logos/Spotify_logo.svg'
 import Toshiba from '../assets/Logos/Toshiba_logo.svg'
 import { Button, Form, Input } from './SignInPage/Styles';
+import HeroCards from './HeroSection/HeroCards';
 const Container = styled.div`
   display: flex;
-  justify-content: space-around ;
+  justify-content: space-evenly ;
   width: 100%;
-overflow: hidden;
+  overflow: hidden;
   padding: 0 ;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    width: 100%;
+    height: fit-content;
+  }
 `;
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width:500px;
+  width:30%;
   margin-top: 4rem;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Title = styled.h1`
@@ -42,11 +48,13 @@ const Subtitle = styled.p`
   top: 575px;
   font-family : Poppins;
   line-height:35px ;
-left: 180px;
-width: 550px;
-height: 116px;
-text-align: left;
+  left: 180px;
+  height: 116px;
+  text-align: left;
   color: #B1AAAA;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 
@@ -59,6 +67,9 @@ const LogosContainer = styled.div`
   margin-left: -1.5rem;
   margin-top:300px;
   scale: 90%;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 3fr);
+  }
   
 `;
 
@@ -68,8 +79,13 @@ margin-right:1rem;
 
 const HeroSVG = styled.div`
   width: 50%;
-  margin-top:-100px
-  
+  position: relative;
+  @media (max-width: 768px) {
+    width: 100%;
+    bottom: -20rem;
+    height: 30vh;
+
+  }
 `;
 
 const Hero = () => (<>
@@ -85,7 +101,7 @@ const Hero = () => (<>
           whileTap={{ scale: 0.9 }}>Try for free</Button>
       </Form>
       <LogosContainer>
-        <img src={CN} style={{ width: '97px'  }} />
+        <img src={CN} style={{ width: '97px' }} />
         <img src={Booking} style={{ width: '232px' }} />
         <img src={Dropbox_logo} style={{ width: '200px' }} />
         <img src={Toshiba} style={{ width: '207px' }} />
@@ -98,8 +114,7 @@ const Hero = () => (<>
 
     </TextContainer>
     <HeroSVG>
-
-      <img  src={HeroIll} style={{ position: 'relative', left: '-200px',  width: '150%', zIndex: '10' }} />
+      <HeroCards />
     </HeroSVG>
   </Container>
 </>

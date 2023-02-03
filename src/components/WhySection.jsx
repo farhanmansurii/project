@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Shapes from '../assets/Why/Why_Illustration.svg'
 import { Text } from './SignInPage/Styles';
-import Illustrations from './BenefitsSection/Illustrations';
+import ShapesWhy from './WhySection/ShapesWhy';
+import CardsWhy from './WhySection/CardsWhy'
 const WhyText = styled.div`
  font-size: 50px;
   width: 60%;
@@ -42,7 +42,9 @@ const WhyContainer = styled.div`
   height: 100vh;
   @media (max-width: 768px) {
     flex-direction: column;
+    gap: 4rem;
     height: max-content;
+    width: 100%;
     
   }
 `
@@ -66,16 +68,17 @@ const WhyTextContainer = styled.div`
   }
   
 `
-export default function WhyComponent() {
+export default function WhySection() {
   return (
     <WhyContainer>
-      <Illustrations />
-      <WhyTextContainer style={{  }}>
-        <WhyText style={{ textAlign: 'left',marginTop:'-1rem' }}>Why do you need task management software?</WhyText>
+
+      <CardsWhy />
+      <ShapesWhy />
+      <WhyTextContainer style={{}}>
+        <WhyText style={{ textAlign: 'left', marginTop: '-1rem' }}>Why do you need task management software?</WhyText>
         <WhySubtext>Do you waste time organizing sticky notes, searching your email and apps for to-dos, and figuring out what to work on first? Then you need one solution to prioritize your tasks, manage your time, and meet your deadlines.</WhySubtext>
         <Learn>LEARN MORE</Learn>
       </WhyTextContainer>
-
     </WhyContainer>
   )
 }

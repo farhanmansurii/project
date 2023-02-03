@@ -53,7 +53,7 @@ opacity: 1;
 
 const BenefitsContainer = styled.div`
   width: 100%;
-  min-height: 80vh;
+  height: 120vh;
   display: flex; 
   align-items: center;
   justify-content: center;
