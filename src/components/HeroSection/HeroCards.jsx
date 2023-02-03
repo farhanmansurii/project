@@ -4,7 +4,8 @@ import Card4 from './Hero_Illustration_Card-4.svg'
 import Card3 from './Hero_Illustration_Card-3.svg'
 import Card2 from './Hero_Illustration_Card-2.svg'
 import Card1 from './Hero_Illustration_Card-1.svg'
-const Container = styled.div`
+import { motion } from 'framer-motion'
+const Container = styled(motion.div)`
   position: absolute;
   align-self: flex-end;
   display: flex;
@@ -13,7 +14,7 @@ const Container = styled.div`
  
 
 `
-const Image4 = styled.img`
+const Image4 = styled(motion.img)`
  position: relative;
     width: 59%;
     bottom: 69.5rem;
@@ -37,7 +38,7 @@ const Image4 = styled.img`
   }
 };
 `
-const Image3 = styled.img`
+const Image3 = styled(motion.img)`
    position: relative;
     width: 70%;
     bottom: 39rem;
@@ -59,7 +60,7 @@ const Image3 = styled.img`
   }
 };
 `
-const Image2 = styled.img`
+const Image2 = styled(motion.img)`
 position: relative;
     top: -17rem;
     width: 100%;
@@ -80,7 +81,7 @@ position: relative;
 };
     z-index: 3;
 `
-const Image1 = styled.img`
+const Image1 = styled(motion.img)`
     position: relative;
     align-self: center;
     width:60%;
@@ -104,12 +105,34 @@ const Image1 = styled.img`
 
 `
 export default function HeroCards() {
+  const variants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      }
+    }
+  }
+  const item = {
+    hidden: {
+      opacity: 0,
+      y: 150,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      }
+    }
+  }
   return (
-    <Container>
-      <Image1 src={Card1} />
-      <Image2 src={Card2} />
-      <Image3 src={Card3} />
-      <Image4 src={Card4} />
+    <Container variants={variants} initial="hidden" animate="show">
+      <Image1 variants={item} src={Card1} />
+      <Image2 variants={item} src={Card2} />
+      <Image3 variants={item} src={Card3} />
+      <Image4  variants={item} src={Card4} />
 
     </Container>
   )
