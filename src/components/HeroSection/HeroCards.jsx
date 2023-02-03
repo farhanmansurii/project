@@ -10,14 +10,13 @@ const Container = styled(motion.div)`
   align-self: flex-end;
   display: flex;
   flex-direction: column;
-  height: 100vh;
  
 
 `
 const Image4 = styled(motion.img)`
  position: relative;
-    width: 59%;
-    bottom: 69.5rem;
+    width: 74%;
+    bottom: 73.5rem;
     -webkit-align-self: end;
     -ms-flex-item-align: end;
     align-self: end;
@@ -40,9 +39,8 @@ const Image4 = styled(motion.img)`
 `
 const Image3 = styled(motion.img)`
    position: relative;
-    width: 70%;
+    width: 90%;
     bottom: 39rem;
-    left: 1rem;
     z-index: -1;
     animation: floating 2.2s ease-in-out infinite;
   transform: translateY(0);
@@ -63,7 +61,7 @@ const Image3 = styled(motion.img)`
 const Image2 = styled(motion.img)`
 position: relative;
     top: -17rem;
-    width: 100%;
+    width: 120%;
     animation: floating 3.3s ease-in-out infinite;
   transform: translateY(0);
 
@@ -84,7 +82,7 @@ position: relative;
 const Image1 = styled(motion.img)`
     position: relative;
     align-self: center;
-    width:60%;
+    width:80%;
     z-index: 4;
     animation: floating 2s ease-in-out infinite;
   transform: translateY(0);
