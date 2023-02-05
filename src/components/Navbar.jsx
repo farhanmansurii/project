@@ -31,7 +31,7 @@ const NavBarRight = styled.button`
 `;
 const NavbarContainer = styled.div`
   display: flex;
-  width: 87%;
+  width: 90%;
   margin: auto;
   margin-top: 40px;
   font-size: 12px;

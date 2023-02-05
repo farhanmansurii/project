@@ -5,6 +5,7 @@ import CN from "../assets/Logos/Cartoon_Network_logo.svg";
 import CocaCola from "../assets/Logos/CocaCola_logo.svg";
 import Dropbox_logo from "../assets/Logos/Dropbox_logo.svg";
 import Netflix_logo from "../assets/Logos/Netflix_logo.svg";
+import RedBull from "../assets/Logos/RedBull_logo.svg";
 import Slack from "../assets/Logos/Slack_logo.svg";
 import Spotify from "../assets/Logos/Spotify_logo.svg";
 import Toshiba from "../assets/Logos/Toshiba_logo.svg";
@@ -121,6 +122,7 @@ const Hero = () => (
           <img src={Netflix_logo} style={{ width: "142px" }} />
           <img src={CocaCola} style={{ width: "157px" }} />
           <img src={Spotify} style={{ width: "189px" }} />
+          <img src={RedBull} style={{ width: "120px" }} />
         </LogosContainer>
       </TextContainer>
       <HeroSVG>
