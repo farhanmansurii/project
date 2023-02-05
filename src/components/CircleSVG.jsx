@@ -1,16 +1,15 @@
-import React from 'react';
 import { motion } from "framer-motion";
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Container = styled.div`
-
   position: absolute;
-  top: -130%;
+  top: -180%;
   left: 50%;
-z-index: -10;
+  z-index: -10;
   overflow: hidden;
   width: 50%;
-`
+`;
 const CircleSVG = () => {
   return (
     <Container>
@@ -19,8 +18,9 @@ const CircleSVG = () => {
         width="2429.182"
         height="2429.182"
         viewBox="0 0 2429.182 2429.182"
-        initial={{ x: '90%' }}
-        animate={{ x: 0 }} style={{ zIndex: '-50' }}
+        initial={{ x: "90%" }}
+        animate={{ x: 0 }}
+        style={{ zIndex: "-50" }}
         transition={{ duration: 1.5 }}
       >
         <g transform="translate(-854.909 587.091)">
@@ -35,7 +35,7 @@ const CircleSVG = () => {
             r="1035.742"
             transform="translate(979.888 -229.393)"
             fill="#ffbc00"
-            transition={{ duration: 1.5,delay: '0.5' }}
+            transition={{ duration: 1.5, delay: "0.5" }}
           />
           <motion.circle
             cx="858.33"
@@ -46,7 +46,8 @@ const CircleSVG = () => {
             transition={{ delay: 1 }}
           />
         </g>
-      </motion.svg></Container>
+      </motion.svg>
+    </Container>
   );
 };
 

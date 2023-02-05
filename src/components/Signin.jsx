@@ -1,7 +1,15 @@
-import SvgSignup from '../assets/Signup/Signup_Shape.svg'
-import { Button, Form, Input, SignIn, SubText, Image, Text } from "./SignInPage/Styles";
-import { motion, useAnimation } from 'framer-motion';
-import styled from 'styled-components';
+import { useAnimation } from "framer-motion";
+import SvgSignup from "../assets/Signup/Signup_Shape.svg";
+import { controls } from "./GlobalStyles";
+import {
+  Button,
+  Form,
+  Image,
+  Input,
+  SignIn,
+  SubText,
+  Text,
+} from "./SignInPage/Styles";
 
 function Signin() {
   const textControls = useAnimation();
@@ -9,18 +17,20 @@ function Signin() {
   return (
     <>
       <SignIn>
-        <Text
-
-        >Get better work done</Text>
-        <SubText
-
-        >
+        <Text>Get better work done</Text>
+        <SubText>
           See why millions of people across 195 <br /> countries use TaskMan.
         </SubText>
-        <Form >
-          <Input placeholder="Name@company.com" />
-          <Button whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}>Try for free</Button>
+        <Form
+          custom={2}
+          initial={controls.initial}
+          whileInView={controls.animate}
+          viewport={{ once: false }}
+        >
+          <Input whileHover={{ scale: 1.1 }} placeholder="Name@company.com" />
+          <Button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            Try for free
+          </Button>
         </Form>
 
         <Image src={SvgSignup} />

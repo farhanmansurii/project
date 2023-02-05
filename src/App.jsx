@@ -1,28 +1,26 @@
-import './App.css'
-import Navbar from './components/Navbar'
-import BenefitsSection from './components/BenefitsSection'
-import CircleSVG from './components/CircleSVG'
-import Hero from './components/Hero'
-import Signin from './components/Signin'
-import styled from 'styled-components'
-import WhySection from './components/WhySection'
-import HeroCards from './components/HeroSection/HeroCards'
+import styled from "styled-components";
+import "./App.css";
+import BenefitsSection from "./components/BenefitsSection";
+import CircleSVG from "./components/CircleSVG";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import Signin from "./components/Signin";
+import WhySection from "./components/WhySection";
 
 const Container = styled.div`
-overflow: hidden;
-`
+  overflow: hidden;
+`;
 function App() {
-
   return (
-  <Container>
-    <Navbar />
-    <Hero/>
-    <CircleSVG/> 
-     <BenefitsSection/>
-    <WhySection/>
-    <Signin/>
-  </Container>
-  )
+    <Container>
+      <Navbar />
+      <Hero />
+      <CircleSVG />
+      <BenefitsSection />
+      <WhySection />
+      <Signin />
+    </Container>
+  );
 }
 
-export default App
+export default App;

@@ -1,43 +1,57 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Text } from './SignInPage/Styles';
-import ShapesWhy from './WhySection/ShapesWhy';
-import CardsWhy from './WhySection/CardsWhy'
+import { motion } from "framer-motion";
+import React from "react";
+import styled from "styled-components";
+import CardsWhy from "./WhySection/CardsWhy";
+import ShapesWhy from "./WhySection/ShapesWhy";
+import Arrow from "./WhySection/Arrow_icon.svg";
 const WhyText = styled.div`
- font-size: 50px;
-  width: 60%;
+  font-size: 40px;
+  width: 75%;
   font-family: Rubik;
   line-height: normal;
-  width: 500px;
   text-align: center;
   color: #1e1c24;
   @media (max-width: 768px) {
-    font-size: 30px;   
+    font-size: 30px;
     width: 70%;
   }
-`
+`;
 
-// const ImageSvg = styled.div`
-//   overflow: hidden;
-// position:relative;  `;
+export const controls = {
+  initial: {
+    opacity: 0,
+    y: 20,
+  },
+  animate: (custom) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: custom * 1,
+      duration: 0.5,
+    },
+  }),
+};
 
-const WhySubtext = styled.div`
-width: 75%;
-line-height: normal;
-font-family: Poppins;
-text-align: left;
-font-size:16px;
-color: #B1AAAA;
-opacity: 1;
-@media (max-width: 768px) {
+const WhySubtext = styled(motion.div)`
+  width: 75%;
+  line-height: normal;
+  font-family: Poppins;
+  text-align: left;
+  font-size: 16px;
+  color: #b1aaaa;
+  opacity: 1;
+
+  @media (max-width: 768px) {
     width: 90%;
-  }`
+  }
+`;
 
-const WhyContainer = styled.div`
+const WhyContainer = styled(motion.div)`
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+
   justify-self: center;
   height: 100vh;
   @media (max-width: 768px) {
@@ -45,40 +59,75 @@ const WhyContainer = styled.div`
     gap: 4rem;
     height: max-content;
     width: 100%;
-    
   }
-`
-const Learn = styled.div`
+`;
+const Learn = styled(motion.div)`
   text-align: left;
-font-weight:bolder;
-font-size: 18px ;
-font-family:Poppins;
-letter-spacing: 0px;
-color: #1E1C24;
-opacity: 1;
-margin-top: 1rem;
-`
+  font-weight: bolder;
+  font-size: 18px;
 
+  font-family: Poppins;
+  letter-spacing: 0px;
+  color: #1e1c24;
+  opacity: 1;
+  margin-top: 1rem;
+`;
 
+const WhyTextContainer = styled(motion.div)`
+  width: 60%;
 
-const WhyTextContainer = styled.div`
-  width: 50%;
   @media (max-width: 768px) {
     width: 90%;
   }
-  
-`
+`;
 export default function WhySection() {
+  // const { ref, inView } = useInView();
+  // const animation = useAnimation();
+  // useEffect(() => {
+  //   if (inView) {
+  //     animation.start({
+  //       opacity: 1,
+  //       y: 0,
+  //       transition: {
+  //         duration: 1,
+  //         opacity: 1,
+  //       },
+  //     });
+  //   }
+  //   if (!inView) {
+  //     animation.start({ opacity: 0, y: 50 });
+  //   }
+  //   console.log("is container in view", inView);
+  // }, [inView]);
+
   return (
     <WhyContainer>
-
       <CardsWhy />
       <ShapesWhy />
-      <WhyTextContainer style={{}}>
-        <WhyText style={{ textAlign: 'left', marginTop: '-1rem' }}>Why do you need task management software?</WhyText>
-        <WhySubtext>Do you waste time organizing sticky notes, searching your email and apps for to-dos, and figuring out what to work on first? Then you need one solution to prioritize your tasks, manage your time, and meet your deadlines.</WhySubtext>
-        <Learn>LEARN MORE</Learn>
+      <WhyTextContainer>
+        <WhyText style={{ textAlign: "left" }}>
+          Why do you need task management software?
+        </WhyText>
+        <WhySubtext
+          custom={1}
+          initial={controls.initial}
+          whileInView={controls.animate}
+          viewport={{ once: false }}
+        >
+          Do you waste time organizing sticky notes, searching your email and
+          apps for to-dos, and figuring out what to work on first? Then you need
+          one solution to prioritize your tasks, manage your time, and meet your
+          deadlines.
+        </WhySubtext>
+        <Learn
+          custom={1.2}
+          initial={controls.initial}
+          whileInView={controls.animate}
+          viewport={{ once: false }}
+        >
+          LEARN MORE
+        </Learn>
       </WhyTextContainer>
     </WhyContainer>
-  )
+  );
 }
