@@ -4,8 +4,8 @@ import styled from "styled-components";
 import Benefits_Icon_Collaborate from "../assets/Benefits/Benefits_Icon_Collaborate.svg";
 import Benefits_Icon_Priotitize from "../assets/Benefits/Benefits_Icon_Priotitize.svg";
 import Benefits_Icon_Track from "../assets/Benefits/Benefits_Icon_Track.svg";
+import { Text } from "./Globalstyles/Styles";
 
-import { Text } from "./SignInPage/Styles";
 
 const controls = {
   initial: {
@@ -16,7 +16,7 @@ const controls = {
     y: 0,
     opacity: 1,
     transition: {
-      delay: custom * 1.3,
+      delay: custom * 1.2,
       duration: 0.4,
     },
   }),
@@ -84,19 +84,7 @@ const BenefitsContainer = styled(motion.div)`
   }
 `;
 
-const BenefitsTitle = styled.div`
-  text-align: center;
-  font-size: 50px;
-  font-family: Rubik;
-  width: 787px;
-  height: 132px;
-  font-weight: bold;
-  line-height: normal;
-  color: #1e1c24;
-  opacity: 1;
-  overflow-wrap: break-word;
-  width: 60%;
-`;
+
 
 const benefitsData = [
   {
@@ -135,7 +123,7 @@ const BenefitsSection = () => {
               src={e.icon}
             />
             <BenefitText
-              custom={i + 0.3}
+              custom={i + 0.2}
               initial={controls.initial}
               whileInView={controls.animate}
               viewport={{ once: false }}
@@ -143,7 +131,7 @@ const BenefitsSection = () => {
               {e.heading}
             </BenefitText>
             <BenefitSubtext
-              custom={i + 0.6}
+              custom={i + 0.4}
               initial={controls.initial}
               whileInView={controls.animate}
               viewport={{ once: false }}

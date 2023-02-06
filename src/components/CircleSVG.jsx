@@ -35,7 +35,7 @@ const CircleSVG = () => {
             r="1035.742"
             transform="translate(979.888 -229.393)"
             fill="#ffbc00"
-            transition={{ duration: 1.5, delay: "0.5" }}
+            transition={{  delay: 0.5 }}
           />
           <motion.circle
             cx="858.33"

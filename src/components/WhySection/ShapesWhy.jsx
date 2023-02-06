@@ -23,8 +23,8 @@ const DonutDiv = styled(motion.img)`
   top: -120px;
   width: 50%;
   @media (max-width: 768px) {
-    width: 100%;
-    top: -3rem;
+    width: 70%;
+    top: -2rem;
   }
 `;
 const BarDiv = styled(motion.img)`
@@ -35,8 +35,8 @@ const BarDiv = styled(motion.img)`
   left: -48%;
   @media (max-width: 768px) {
     width: 100%;
-    top: 2rem;
-    left: -13rem;
+    top: 5rem;
+    left: -8rem;
   }
 `;
 const ShapesContainer = styled(motion.div)`

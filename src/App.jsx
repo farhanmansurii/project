@@ -2,9 +2,9 @@ import styled from "styled-components";
 import "./App.css";
 import BenefitsSection from "./components/BenefitsSection";
 import CircleSVG from "./components/CircleSVG";
-import Hero from "./components/Hero";
+import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
-import Signin from "./components/Signin";
+import SigninSection from "./components/SigninSection";
 import WhySection from "./components/WhySection";
 
 const Container = styled.div`
@@ -14,11 +14,11 @@ function App() {
   return (
     <Container>
       <Navbar />
-      <Hero />
+      <HeroSection />
       <CircleSVG />
       <BenefitsSection />
       <WhySection />
-      <Signin />
+      <SigninSection />
     </Container>
   );
 }
