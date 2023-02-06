@@ -14,7 +14,7 @@
 <h2>Getting Started</h2>
 <ol>
   <li>Clone the repository:
-  <pre><code>git clone </code></pre>
+  <pre><code>git clone https://github.com/farhanmansurii/taskman-landing-page.git </code></pre>
   </li>
   <li>Install dependencies:
   <pre><code>npm install</code></pre>
